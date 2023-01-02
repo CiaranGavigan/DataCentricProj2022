@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Departments</h1>
+
+
+    <!-- Create a table to display data -->
+    <table>
+        <tr>
+            <!-- Table Headers -->
+            <th>DID</th>
+            <th>Name</th>
+            <th>Budget</th>
+            <th>Location</th>
+            <th>Delete</th>
+        </tr>
+        <!-- Display using a forEach -->
+        <% department.forEach((dept) => { %>
+            <tr>
+                 <!-- Display data here -->
+                <td><%= dept.did %></td>
+                <td><%= dept.dname %></td>
+                <td><%= dept.budget %></td>
+                <td><%= dept.lid %></td>
+                <!-- Link to update an employee -->
+                <td><a href="http://localhost:3000/department/delete/<%= dept.did %>">Delete</a></td>
+            </tr>
+        <% }) %>
+    </table>

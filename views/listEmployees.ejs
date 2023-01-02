@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employees</h1>
+
+
+    <!-- Create a table to display data -->
+    <table>
+        <tr>
+            <!-- Table Headers -->
+            <th>EID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Salary</th>
+            <th>Update</th>
+        </tr>
+        <!-- Display using a forEach -->
+        <% employee.forEach((employee) => { %>
+            <tr>
+                 <!-- Display data here -->
+                <td><%= employee.eid %></td>
+                <td><%= employee.ename %></td>
+                <td><%= employee.role %></td>
+                <td><%= employee.salary %></td>
+                <!-- Link to update an employee -->
+                <td><a href="http://localhost:3000/employee/edit/<%= employee.eid %>">Update</a></td>
+            </tr>
+        <% }) %>
+    </table>
+
+    <!-- Home button -->
+    <br><button onclick="window.location.href='/'">Home</button>
+</body>
+

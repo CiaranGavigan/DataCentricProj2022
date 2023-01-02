@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h2>Edit Employee</h2>
+
+    <!-- Display error messages for each error -->
+    <% if (errors != undefined) { %>
+        <ul>
+            <% errors.forEach((error) => { %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+    
+    <!-- for loop to display information in form when page is opened-->
+    <% for (var i = 0; i < employee.length; i++){ %>
+        <!-- Create a edit employee form with a post method-->
+        <form action="/employee/edit/<%= employee[i].eid %>" method="post">
+                <label>Employee ID:</label><br>
+                <input type="text" name="eid" disabled value="<%= employee[i].eid %>"><br>
+                <label>Name:</label><br>
+                <input type="text" name="name" value="<%= employee[i].name %>"><br>
+                <label>Role:</label><br>
+                <input type="text" name="role" value="<%= employee[i].role %>"><br><br>
+                <label>Salary:</label><br>
+                <input type="number" name="salary" value="<%= employee[i].salary %>"><br><br>
+                <input type="submit" value="Add">
+        </form>
+    <% } %>
+
+    <!-- Home button -->
+    <br><br><button onclick="window.location.href='/'">Home</button>
+</body>
+
+</html>

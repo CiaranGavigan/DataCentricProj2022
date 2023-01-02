@@ -1,0 +1,45 @@
+<!-- <!DOCTYPE html> -->
+<html>
+
+<head>
+</head>
+
+<body>
+    <h2>Add employee data</h2>
+
+    <!-- Display error messages for each error -->
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+    <!-- Seperate display for duplication error -->
+    <% if (dupe !="" ) { %>
+        <ul>
+            <li>
+                <%= dupe %>
+            </li>
+        </ul>
+    <% } %>
+
+    <!-- Create a form to add a lecturer with a post method-->
+    <form action="/addLecturer" method="post">
+        <label>EID:</label><br>
+        <input type="text" name="_id" value="<%= _id %>"><br>
+        <label>Phone:</label><br>
+        <input type="number" name="name" value="<%= phone %>"><br>
+        <label>Email:</label><br>
+        <input type="text" name="dept" value="<%= email %>"><br><br>
+        <input type="submit" value="Add"><br><br><br>
+    </form>
+
+    <!-- Home button -->
+    <button onclick="window.location.href='/'">Home</button>
+</body>
+
+</html> 
